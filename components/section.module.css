@@ -1,0 +1,36 @@
+.section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 84px 24px 0;
+}
+
+.section:last-of-type {
+  padding-bottom: 120px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.tag::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 44px;
+}

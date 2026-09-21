@@ -1,0 +1,307 @@
+/* ============================================================
+   JOGO DA FORCA — página e jogo (mesmo tema matrix minimalista)
+   ============================================================ */
+
+/* --- página --- */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 110px 24px 90px;
+}
+
+.pageInner {
+  width: 100%;
+  max-width: 760px;
+}
+
+.back {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.back:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.pageHeader {
+  margin: 34px 0 42px;
+}
+
+.pageTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.pageTitle {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  color: var(--text);
+}
+
+.pageSub {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* --- jogo --- */
+.game {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  padding: 36px 30px;
+}
+
+/* --- estado carregando --- */
+.loading {
+  text-align: center;
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  padding: 30px 0;
+}
+
+/* --- palavra com underlines --- */
+.word {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.cell {
+  width: 38px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--line-strong);
+  transition: color 0.2s ease;
+}
+
+.cellShown {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.45);
+}
+
+/* --- tentativas restantes --- */
+.attempts {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 30px;
+}
+
+.attemptsCount {
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+/* --- tabuleiro: boneco + teclado --- */
+.board {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 34px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .board {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .svg {
+    width: 150px;
+  }
+}
+
+/* --- boneco SVG --- */
+.svg {
+  width: 190px;
+  height: auto;
+  stroke: #3a4a3a;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.gallows {
+  stroke: #4a5a4a;
+  opacity: 0.85;
+}
+
+.part {
+  stroke: var(--accent);
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+.partHidden {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+/* --- teclado virtual --- */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .keyboard {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.key {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 9px 0;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, transform 0.1s ease;
+}
+
+.key:hover:not(:disabled) {
+  background: var(--accent-soft);
+  border-color: var(--line-strong);
+  color: var(--accent);
+}
+
+.key:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.key:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.keyOk {
+  color: var(--accent);
+  border-color: var(--line-strong);
+  background: var(--accent-soft);
+  opacity: 1 !important;
+}
+
+.keyBad {
+  color: var(--danger);
+  border-color: rgba(255, 92, 92, 0.35);
+  background: rgba(255, 92, 92, 0.06);
+  opacity: 0.85 !important;
+  text-decoration: line-through;
+}
+
+/* --- letras tentadas --- */
+.tried {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.triedLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 18px;
+  min-height: 28px;
+}
+
+.empty {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-radius: 6px;
+  padding: 2px 9px;
+}
+
+.chipOk {
+  color: var(--accent);
+  border: 1px solid var(--line-strong);
+  background: var(--accent-soft);
+}
+
+.chipBad {
+  color: var(--danger);
+  border: 1px dashed rgba(255, 92, 92, 0.45);
+  background: rgba(255, 92, 92, 0.05);
+}
+
+/* --- fim de jogo + reiniciar --- */
+.endzone {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 96px;
+  justify-content: center;
+}
+
+.message {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.win {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.35);
+}
+
+.lose {
+  color: var(--danger);
+}
+
+.reveal {
+  letter-spacing: 0.14em;
+}
+
+.restart {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 10px 26px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restart:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.18);
+}

@@ -1,0 +1,50 @@
+/* --- sobre --- */
+.aboutGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.aboutText {
+  color: var(--text-dim);
+  max-width: 66ch;
+}
+
+/* --- timelines --- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- habilidades --- */
+.skillGroups {
+  display: grid;
+  gap: 40px;
+}
+
+.skillGroupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+}
+
+.skillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* --- projetos --- */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+@media (min-width: 760px) {
+  .projectGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

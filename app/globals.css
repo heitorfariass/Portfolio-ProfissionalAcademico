@@ -1,0 +1,155 @@
+/* ============================================================
+   TEMA GLOBAL — dark matrix minimalista
+   Verde neon apenas como acento · muito espaço em branco
+   ============================================================ */
+
+:root {
+  --bg: #0a0e0a;
+  --bg-raised: #0e130e;
+  --bg-hover: #121a12;
+  --line: rgba(0, 255, 65, 0.1);
+  --line-strong: rgba(0, 255, 65, 0.28);
+  --text: #d2ded2;
+  --text-dim: #7d8a7d;
+  --text-faint: #556055;
+  --accent: #00ff41;
+  --accent-soft: rgba(0, 255, 65, 0.09);
+  --danger: #ff5c5c;
+  --font-body: var(--font-space), "Segoe UI", sans-serif;
+  --font-mono: var(--font-share), "Consolas", monospace;
+  --content-width: 880px;
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* --- scrollbar discreta --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #1a241a;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #243224;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* ============================================================
+   SEÇÕES
+   ============================================================ */
+
+.section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 88px 24px 0;
+}
+
+.section:last-of-type {
+  padding-bottom: 120px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.section-tag::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+}
+
+.section-lead {
+  color: var(--text-dim);
+  max-width: 60ch;
+}
+
+/* ============================================================
+   COMPONENTES DE TEXTO REUTILIZÁVEIS
+   ============================================================ */
+
+.text-link {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--accent);
+  opacity: 1;
+}
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}

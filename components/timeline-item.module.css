@@ -1,0 +1,184 @@
+.item {
+  position: relative;
+  padding-left: 28px;
+  padding-bottom: 52px;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 22px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--line);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+.marker {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
+}
+
+.period {
+  margin-bottom: 8px;
+}
+
+.periodLabel {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: 1.12rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.institution {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.org {
+  font-size: 0.92rem;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+.description {
+  color: var(--text-dim);
+  max-width: 64ch;
+  margin-bottom: 16px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin-bottom: 14px;
+}
+
+.skill {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 11px;
+}
+
+.link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+}
+
+.link:hover {
+  border-bottom-color: var(--accent);
+  opacity: 1;
+}
+
+/* --- disciplinas em destaque --- */
+.courses {
+  margin-bottom: 16px;
+}
+
+.coursesLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.coursesList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 6px 24px;
+}
+
+.course {
+  font-size: 0.94rem;
+  color: var(--text-dim);
+  padding-left: 20px;
+  position: relative;
+}
+
+.course::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* --- selo/certificado --- */
+.badgeFigure {
+  margin: 4px 0 16px;
+}
+
+.badgeImage {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff; /* o selo tem fundo branco */
+  max-width: 260px;
+  height: auto;
+}
+
+/* --- barra de progresso (ex.: 1/5 cursos) --- */
+.progress {
+  position: relative;
+  max-width: 420px;
+  margin-top: 6px;
+}
+
+/* trilho sutil atrás do preenchimento */
+.progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--line);
+}
+
+.progressFill {
+  position: relative;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.progressText {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}

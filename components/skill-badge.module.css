@@ -1,0 +1,16 @@
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 15px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.badge:hover {
+  color: var(--accent);
+  border-color: var(--line-strong);
+}

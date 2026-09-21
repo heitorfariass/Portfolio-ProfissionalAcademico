@@ -1,0 +1,16 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 34px 24px 44px;
+  text-align: center;
+}
+
+.footer p {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.prompt {
+  color: var(--accent);
+}
