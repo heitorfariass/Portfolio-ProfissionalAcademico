@@ -2,8 +2,12 @@ import Image from "next/image";
 import styles from "./timeline-item.module.css";
 
 export default function TimelineItem({ item }) {
-  return (
-    <article className={styles.item}>
+  const img = item.image;
+  const isSide = img && img.layout === "side";
+  const isLogo = img && img.square;
+
+  const content = (
+    <>
       <div className={styles.marker} aria-hidden="true" />
 
       <div className={styles.period}>
@@ -12,7 +16,18 @@ export default function TimelineItem({ item }) {
 
       <h3 className={styles.title}>{item.title}</h3>
       <p className={styles.institution}>
-        {item.institution && <span className={styles.org}>{item.institution}</span>}
+        {isLogo && (
+          <Image
+            src={img.src}
+            alt={img.alt}
+            width={40}
+            height={40}
+            className={styles.logoChip}
+          />
+        )}
+        {item.institution && (
+          <span className={styles.org}>{item.institution}</span>
+        )}
         {item.company && <span className={styles.org}>{item.company}</span>}
       </p>
 
@@ -62,7 +77,7 @@ export default function TimelineItem({ item }) {
         </div>
       )}
 
-      {item.image && (
+      {item.image && !isSide && !isLogo && (
         <figure className={styles.badgeFigure}>
           <Image
             src={item.image.src}
@@ -84,6 +99,33 @@ export default function TimelineItem({ item }) {
           {item.link.label} <span aria-hidden="true">↗</span>
         </a>
       )}
-    </article>
+    </>
   );
+
+  // layout "side": texto à esquerda, foto à direita (empilha no mobile)
+  if (isSide) {
+    return (
+      <article className={styles.item}>
+        <div className={styles.sideGrid}>
+          <div className={styles.sideText}>{content}</div>
+          <figure className={styles.sideFigure}>
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={img.width}
+              height={img.height}
+              className={styles.sideImage}
+            />
+            {img.caption && (
+              <figcaption className={styles.sideCaption}>
+                {img.caption}
+              </figcaption>
+            )}
+          </figure>
+        </div>
+      </article>
+    );
+  }
+
+  return <article className={styles.item}>{content}</article>;
 }

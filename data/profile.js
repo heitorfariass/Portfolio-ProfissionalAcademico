@@ -36,6 +36,14 @@ export const education = [
       "Projeto de Banco de Dados",
       "Robótica Inclusiva",
     ],
+    image: {
+      src: "/images/unicap.jpg",
+      alt: "Vista aérea do campus da Universidade Católica de Pernambuco",
+      width: 1200,
+      height: 799,
+      layout: "side",
+      caption: "campus da UNICAP, Recife",
+    },
   },
 ];
 
@@ -52,6 +60,13 @@ export const experience = [
       "Organização",
       "Comunicação com cliente",
     ],
+    image: {
+      src: "/images/veeda.jpg",
+      alt: "Logo da agência de marketing Veeda",
+      width: 150,
+      height: 150,
+      square: true,
+    },
     link: {
       label: "ver portfólio de design",
       url: "https://www.instagram.com/veeda.mkt/",
@@ -93,6 +108,7 @@ export const skillGroups = [
       "Gestão de Tempo",
       "Trabalho em Equipe",
       "Comunicação com Clientes",
+      "Entrega sob Demanda",
     ],
   },
 ];
@@ -100,15 +116,54 @@ export const skillGroups = [
 export const projects = [
   {
     title: "DINEUP",
-    tagline: "descoberta e curadoria de restaurantes",
+    tagline: "projeto principal — descoberta e curadoria de restaurantes",
     description: [
       "O DINEUP começou com a ideia do meu sócio Júlio: um aplicativo de descoberta e curadoria de restaurantes. Ele trouxe a visão do negócio e eu me voluntariei para dar vida à ideia como desenvolvedor. Eu estava ainda no 3º período e, como autodidata, pesquisei, testei e construí o produto do zero, enquanto Júlio cuidava do marketing, financeiro e planejamento — aprendi muito no caminho.",
       "Com o amadurecimento do projeto, entendemos o tamanho do desafio de lançar um app mobile: burocracia, alto investimento para lançar e manter a plataforma e a missão de conquistar usuários e restaurantes parceiros ao mesmo tempo. O DINEUP entrou em pausa estratégica — mas o que ele me deixou permanece: foi minha maior escola prática de desenvolvimento de software, produto e trabalho em equipe, e a experiência que confirmou como eu gosto de transformar uma ideia em algo real.",
     ],
     tech: ["React", "Firebase", "IA", "Vercel"],
+    screenshots: [
+      {
+        src: "/images/dineup-map.png",
+        alt: "Tela do DINEUP com mapa de restaurantes na região e cartão do Burger Blast",
+        caption: "busca por mapa",
+      },
+      {
+        src: "/images/dineup-culinarias.png",
+        alt: "Tela do DINEUP de escolha de culinárias favoritas com chips laranja",
+        caption: "curadoria de gostos",
+      },
+      {
+        src: "/images/dineup-cardapio.png",
+        alt: "Tela do DINEUP com cardápio do restaurante e prato em destaque",
+        caption: "cardápio e pratos",
+      },
+      {
+        src: "/images/dineup-reserva.png",
+        alt: "Tela do DINEUP de reserva de mesa com pessoas, data e horário",
+        caption: "reserva de mesa",
+      },
+    ],
     url: "https://dineup1.vercel.app/",
     linkLabel: "dineup1.vercel.app",
     featured: true,
+  },
+  {
+    title: "ACESSO INCLUSIVO · UNICAP",
+    tagline: "robótica inclusiva — projeto com impacto social",
+    description: [
+      "Uma porta que abre sem pedir ajuda: sistema de destravamento com RFID na UNICAP que devolve autonomia a estudantes com mobilidade reduzida — basta aproximar o cartão e a trava abre sozinha, sem depender de terceiros.",
+      "Desenvolvido em equipe na disciplina de Robótica Inclusiva, com Arduino, leitor RC522 e mecanismo de trava impresso em 3D. Cadastro de usuários pelo próprio dispositivo via Cartão Mestre e memória persistente na EEPROM — 100% offline.",
+    ],
+    tech: ["Arduino", "RFID", "C++", "Impressão 3D"],
+    url: "https://github.com/heitorfariass/Controle-de-Acesso-Inclusivo---UNICAP",
+    linkLabel: "repositório no GitHub",
+    image: {
+      src: "/images/acesso-prototipo.jpg",
+      alt: "Protótipo do sistema de destravamento por RFID instalado em um portão",
+      width: 1200,
+      height: 2134,
+    },
   },
   {
     title: "JOGO DA FORCA",
@@ -118,6 +173,5 @@ export const projects = [
     tech: ["Next.js", "React", "CSS"],
     url: "/forca",
     linkLabel: "jogar agora",
-    featured: false,
   },
 ];

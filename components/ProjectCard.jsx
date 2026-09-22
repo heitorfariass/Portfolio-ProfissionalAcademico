@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./project-card.module.css";
 
 export default function ProjectCard({ project }) {
@@ -13,6 +14,19 @@ export default function ProjectCard({ project }) {
     <article
       className={`${styles.card} ${project.featured ? styles.featured : ""}`}
     >
+      {project.image && (
+        <div className={styles.cover}>
+          <Image
+            src={project.image.src}
+            alt={project.image.alt}
+            width={project.image.width}
+            height={project.image.height}
+            sizes="(max-width: 760px) 100vw, 340px"
+            className={styles.coverImage}
+          />
+        </div>
+      )}
+
       {project.featured && (
         <span className={styles.badge}>projeto principal</span>
       )}

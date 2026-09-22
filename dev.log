@@ -1,248 +1,34 @@
 
 > portfolio@0.1.0 dev
-> next dev
+> next dev -p 51611
 
 ▲ Next.js 16.3.5 (Turbopack)
-- Local:         http://localhost:51604
-- Network:       http://192.168.15.16:51604
-✓ Ready in 604ms
-✓ Running next.config.mjs took 25ms
-⚠ Slow filesystem detected. The benchmark took 326ms. If \\?\C:\Users\heito\OneDrive\Documents\Faculdade\5-periodo\WebMobile\Portfolio\portfolio\.next\dev is a network drive, consider moving it to a local folder.
+- Local:         http://localhost:51611
+- Network:       http://192.168.15.16:51611
+✓ Ready in 1778ms
+✓ Running next.config.mjs took 26ms
+⚠ Slow filesystem detected. The benchmark took 548ms. If \\?\C:\Users\heito\OneDrive\Documents\Faculdade\5-periodo\WebMobile\Portfolio\portfolio\.next\dev is a network drive, consider moving it to a local folder.
 See more: https://nextjs.org/docs/app/guides/local-development
 
- GET / 200 in 2.6s (next.js: 2.5s, application-code: 187ms)
- GET / 200 in 77ms (next.js: 17ms, application-code: 60ms)
- GET / 200 in 74ms (next.js: 8ms, application-code: 66ms)
- GET / 200 in 68ms (next.js: 6ms, application-code: 61ms)
- GET /forca 200 in 373ms (next.js: 311ms, application-code: 62ms)
-[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
-      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-        <LoadingBoundary name="forca/" loading={null}>
-          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-            <RedirectBoundary>
-              <RedirectErrorBoundary router={{...}}>
-                <InnerLayoutRouter url="/forca" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
-                  <SegmentViewNode type="page" pagePath="forca/page...">
-                    <SegmentTrieNode>
-                    <ForcaPage>
-                      <main className="forca-modu...">
-                        <div className="forca-modu...">
-                          <LinkComponent>
-                          <header>
-                          <Game>
-                            <div className="forca-modu...">
-                              <div className="forca-modu..." role="group" aria-label="Palavra a ...">
--                               <span className={"forca-module__ebI-9a__cell "} aria-label="letra oculta">
--                               <span className={"forca-module__ebI-9a__cell "} aria-label="letra oculta">
--                               <span className={"forca-module__ebI-9a__cell "} aria-label="letra oculta">
-                              ...
-                  ...
-                ...
-      ...
-
-    at <unknown> (https://react.dev/link/hydration-mismatch)
-    at div (<anonymous>)
-    at Game (components/forca/Game.jsx:64:7)
-    at ForcaPage (app\forca\page.jsx:27:9)
-  62 |     <div className={styles.game}>
-  63 |       {/* palavra oculta */}
-> 64 |       <div
-     |       ^
-  65 |         className={styles.word}
-  66 |         role="group"
-  67 |         aria-label="Palavra a ser adivinhada"
- GET /forca 200 in 41ms (next.js: 13ms, application-code: 28ms)
-✓ Compiled in 22ms
- GET /forca 200 in 37ms (next.js: 11ms, application-code: 26ms)
- GET / 200 in 67ms (next.js: 6ms, application-code: 61ms)
- GET /forca 200 in 60ms (next.js: 15ms, application-code: 45ms)
-✓ Compiled in 19ms
- GET /forca 200 in 53ms (next.js: 12ms, application-code: 41ms)
- GET / 200 in 65ms (next.js: 6ms, application-code: 59ms)
- GET /forca 200 in 37ms (next.js: 5ms, application-code: 32ms)
- GET /forca 200 in 38ms (next.js: 5ms, application-code: 33ms)
- GET / 200 in 83ms (next.js: 6ms, application-code: 77ms)
- GET /forca 200 in 38ms (next.js: 5ms, application-code: 33ms)
- GET / 200 in 54ms (next.js: 5ms, application-code: 49ms)
- GET / 200 in 15ms (next.js: 6ms, application-code: 9ms)
- GET / 200 in 37ms (next.js: 6ms, application-code: 31ms)
- GET / 200 in 64ms (next.js: 7ms, application-code: 57ms)
- GET /forca 200 in 39ms (next.js: 7ms, application-code: 32ms)
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
- GET / 200 in 52ms (next.js: 6ms, application-code: 45ms)
- GET / 200 in 12ms (next.js: 6ms, application-code: 6ms)
- GET / 200 in 14ms (next.js: 6ms, application-code: 8ms)
- GET / 200 in 14ms (next.js: 5ms, application-code: 9ms)
- GET / 200 in 12ms (next.js: 5ms, application-code: 7ms)
- GET / 200 in 12ms (next.js: 5ms, application-code: 7ms)
- GET / 200 in 13ms (next.js: 6ms, application-code: 8ms)
- GET / 200 in 129ms (next.js: 30ms, application-code: 99ms)
- GET / 200 in 59ms (next.js: 21ms, application-code: 38ms)
-[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'length')
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:62)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                              ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'length')
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:62)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                              ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-✓ Compiled in 251ms
- GET / 200 in 726ms (next.js: 40ms, application-code: 686ms)
- GET / 200 in 727ms (next.js: 136ms, application-code: 591ms)
-[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'length')
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:62)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                              ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
- GET / 200 in 128ms (next.js: 13ms, application-code: 114ms)
- GET / 200 in 77ms (next.js: 8ms, application-code: 69ms)
-[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'length')
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:62)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                              ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
- GET / 200 in 85ms (next.js: 5ms, application-code: 80ms)
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length", text is undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
-[browser] Uncaught TypeError: can't access property "length" of undefined
-    at DeleteText.useEffect.tick (components/DeleteText.jsx:24:57)
-  22 |     const tick = () => {
-  23 |       frame++;
-> 24 |       const reveal = Math.floor((frame / totalFrames) * text.length);
-     |                                                         ^
-  25 |       let out = text.slice(0, reveal);
-  26 |       for (let i = reveal; i < text.length; i++) {
-  27 |         out += CHARS[Math.floor(Math.random() * CHARS.length)];
- GET / 200 in 58ms (next.js: 5ms, application-code: 53ms)
- GET / 200 in 153ms (next.js: 32ms, application-code: 121ms)
- GET / 200 in 73ms (next.js: 12ms, application-code: 61ms)
-✓ Compiled in 10ms
- GET / 200 in 15ms (next.js: 6ms, application-code: 9ms)
+○ Compiling / ...
+ GET / 200 in 7.2s (next.js: 6.6s, application-code: 563ms)
+ GET /forca 200 in 76ms (next.js: 30ms, application-code: 46ms)
+ GET / 200 in 81ms (next.js: 13ms, application-code: 68ms)
+ GET / 200 in 66ms (next.js: 5ms, application-code: 61ms)
+ GET / 200 in 73ms (next.js: 6ms, application-code: 68ms)
+ GET / 200 in 81ms (next.js: 8ms, application-code: 74ms)
+ GET / 200 in 144ms (next.js: 8ms, application-code: 135ms)
+ GET / 200 in 78ms (next.js: 5ms, application-code: 73ms)
+ GET / 200 in 70ms (next.js: 5ms, application-code: 65ms)
+ GET /forca 200 in 41ms (next.js: 6ms, application-code: 35ms)
+✓ Compiled in 310ms
+ GET / 200 in 65ms (next.js: 12ms, application-code: 53ms)
+✓ Compiled in 6ms
+✓ Compiled in 6ms
+ GET / 200 in 68ms (next.js: 6ms, application-code: 62ms)
+ GET / 200 in 71ms (next.js: 5ms, application-code: 66ms)
+ GET / 200 in 89ms (next.js: 8ms, application-code: 81ms)
+ GET / 200 in 99ms (next.js: 12ms, application-code: 87ms)
+ GET / 200 in 47ms (next.js: 6ms, application-code: 41ms)
+ GET / 200 in 127ms (next.js: 19ms, application-code: 108ms)
+ GET / 200 in 125ms (next.js: 58ms, application-code: 67ms)

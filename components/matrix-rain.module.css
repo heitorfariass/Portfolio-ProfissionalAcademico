@@ -10,7 +10,14 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.07; /* sutilidade é a regra */
+  opacity: 0.28; /* desktop: presente sem brigar com o texto */
+}
+
+/* no celular o brilho se perde — reforço controlado */
+@media (max-width: 768px) {
+  .canvas {
+    opacity: 0.5;
+  }
 }
 
 /* véu que garante contraste do texto sobre a chuva */
@@ -19,7 +26,7 @@
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    transparent 30%,
-    rgba(10, 14, 10, 0.75) 100%
+    transparent 55%,
+    rgba(10, 14, 10, 0.45) 100%
   );
 }

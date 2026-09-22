@@ -50,6 +50,14 @@
   margin-bottom: 4px;
 }
 
+/* --- logo inline (ex.: Veeda) --- */
+.logoChip {
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+  align-self: center;
+}
+
 .institution {
   display: flex;
   gap: 10px;
@@ -147,6 +155,51 @@
   background: #fff; /* o selo tem fundo branco */
   max-width: 260px;
   height: auto;
+}
+
+/* --- layout com foto lateral (ex.: UNICAP) --- */
+.sideGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 36px;
+  align-items: center;
+}
+
+.sideFigure {
+  margin: 0;
+}
+
+.sideImage {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  filter: saturate(0.82) brightness(0.92);
+  transition: filter 0.3s ease;
+}
+
+.sideFigure:hover .sideImage {
+  filter: saturate(1) brightness(1);
+}
+
+.sideCaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-top: 8px;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .sideGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sideCaption {
+    text-align: left;
+  }
 }
 
 /* --- barra de progresso (ex.: 1/5 cursos) --- */

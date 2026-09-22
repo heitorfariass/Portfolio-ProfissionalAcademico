@@ -17,13 +17,16 @@ export default function MatrixRain() {
     const ctx = canvas.getContext("2d");
     let raf = 0;
     let columns = [];
-    const FONT = 14;
+    let scale = 1; // densidade de pixels (devicePixelRatio)
+    const FONT = 16;
     const CHARS = "アイウエオカキクケコサシスセソ01234567890<>_/$#";
 
     function resize() {
       const { offsetWidth: w, offsetHeight: h } = canvas.parentElement;
-      canvas.width = w;
-      canvas.height = h;
+      // renderiza na densidade real da tela — sem isso o celular borra e apaga os glifos
+      scale = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(w * scale);
+      canvas.height = Math.round(h * scale);
       const count = Math.floor(w / FONT);
       columns = Array.from({ length: count }, () =>
         Math.floor(Math.random() * -100)
@@ -34,14 +37,15 @@ export default function MatrixRain() {
       // véu translúcido que apaga os rastros lentamente
       ctx.fillStyle = "rgba(10, 14, 10, 0.12)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.font = `${FONT}px monospace`;
+      ctx.font = `${FONT * scale}px monospace`;
 
       columns.forEach((y, i) => {
-        const x = i * FONT;
+        const x = i * FONT * scale;
         const char = CHARS[Math.floor(Math.random() * CHARS.length)];
-        ctx.fillStyle = "rgba(0, 255, 65, 0.55)";
-        ctx.fillText(char, x, y * FONT);
-        if (y * FONT > canvas.height && Math.random() > 0.976) columns[i] = 0;
+        ctx.fillStyle = "rgba(0, 255, 65, 0.85)";
+        ctx.fillText(char, x, y * FONT * scale);
+        if (y * FONT * scale > canvas.height && Math.random() > 0.96)
+          columns[i] = 0;
         else columns[i] = y + 1;
       });
       raf = requestAnimationFrame(draw);

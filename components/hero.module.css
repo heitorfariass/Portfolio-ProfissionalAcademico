@@ -15,9 +15,40 @@
   padding: 0 24px;
 }
 
+/* --- foto de perfil --- */
+.portraitWrap {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 26px;
+}
+
+.portrait {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow:
+    0 0 0 5px rgba(0, 255, 65, 0.08),
+    0 0 28px rgba(0, 255, 65, 0.28);
+}
+
+.statusDot {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+}
+
 .hello {
   font-family: var(--font-mono);
-  color: var(--text-faint);
+  color: var(--text-dim);
   font-size: 0.82rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;

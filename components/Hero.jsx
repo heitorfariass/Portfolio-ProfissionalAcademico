@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import MatrixRain from "./MatrixRain";
 import DeleteText from "./DeleteText";
@@ -24,6 +25,18 @@ export default function Hero() {
       <MatrixRain />
 
       <div className={styles.content}>
+        <div className={styles.portraitWrap}>
+          <Image
+            src="/images/heitor.jpg"
+            alt="Foto de Heitor Farias Santos"
+            width={128}
+            height={128}
+            priority
+            className={styles.portrait}
+          />
+          <span className={styles.statusDot} aria-hidden="true" />
+        </div>
+
         <p className={styles.hello}>olá, mundo — eu sou</p>
 
         <h1 className={styles.name}>

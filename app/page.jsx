@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import TimelineItem from "@/components/TimelineItem";
+import DineupShowcase from "@/components/DineupShowcase";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
 import ContactList from "@/components/ContactList";
@@ -15,6 +16,9 @@ import {
 import styles from "./home.module.css";
 
 export default function Home() {
+  const featured = projects.find((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+
   return (
     <main>
       <Hero />
@@ -69,8 +73,9 @@ export default function Home() {
       </Section>
 
       <Section id="projetos" tag="06 · galeria" title="projetos">
+        <DineupShowcase project={featured} />
         <div className={styles.projectGrid}>
-          {projects.map((p) => (
+          {rest.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
         </div>
